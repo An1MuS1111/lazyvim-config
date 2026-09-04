@@ -5,3 +5,6 @@
 -- Exit insert mode with jk or jj
 vim.keymap.set("i", "jk", "<esc>", { desc = "Escape insert mode" })
 vim.keymap.set("i", "jj", "<esc>", { desc = "Escape insert mode" })
+
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })

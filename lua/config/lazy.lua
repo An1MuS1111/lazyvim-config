@@ -20,12 +20,85 @@ require("lazy").setup({
       "olimorris/onedarkpro.nvim",
       priority = 1000, -- Ensure it loads before everything else
     },
+    {
+      "slugbyte/lackluster.nvim",
+      lazy = false,
+      priority = 1000, -- or "lackluster" / "lackluster-hack" / "lackluster-mint"
+    },
+    {
+      "ellisonleao/gruvbox.nvim",
+      priority = 1000, -- Make sure it loads first
+      config = true,
+      opts = {
+        -- Optional: Add any gruvbox-specific options here
+        contrast = "", -- options: "hard", "soft", or "" (default)
+        transparent_mode = true,
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = false,
+          operators = false,
+          folds = false,
+          definitions = false,
+        },
+      },
+    },
+    -- {
+    --   "sainnhe/gruvbox-material",
+    --   lazy = false,
+    --   priority = 1000,
+    --   config = function()
+    --     vim.g.gruvbox_material_background = "soft" -- options: 'hard', 'medium', 'soft'
+    --     vim.g.gruvbox_material_enable_italic = true
+    --   end,
+    -- },
+    {
+      "folke/tokyonight.nvim",
+      opts = {
+        styles = {
+          -- Set italic to false for whatever groups you want to disable
+          comments = { italic = false },
+          keywords = { italic = false },
+          functions = { italic = false },
+          variables = { italic = false },
+          -- If you want to absolutely disable italics everywhere,
+          -- you can also add 'identifiers = { italic = false }'
+        },
+      },
+    },
+    {
+      "datsfilipe/vesper.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {
+        transparent = false, -- Set to true if you want a transparent background
+        italics = {
+          comments = true,
+          keywords = true,
+          functions = true,
+          strings = true,
+          variables = true,
+        },
+      },
+    },
+    {
+      "Mofiqul/vscode.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {
+        transparent = false,
+        italic_comments = true,
+        italic_inlayhints = true,
+        underline_links = true,
+        disable_nvimtree_bg = true,
+      },
+    },
     -- add LazyVim and import its plugins
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "onedark",
+        colorscheme = "gruvbox",
       },
     },
     -- Support for typescript
@@ -37,6 +110,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.cmake" },
     -- { import = "lazyvim.plugins.extras.lang.dap.core" },
     { import = "lazyvim.plugins.extras.lang.java" },
+    { import = "lazyvim.plugins.extras.lang.typst" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -49,7 +123,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax", "gruvbox" } },
+  install = { colorscheme = { "habamax", "gruvbox" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
