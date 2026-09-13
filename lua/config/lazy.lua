@@ -17,15 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     {
-      "olimorris/onedarkpro.nvim",
-      priority = 1000, -- Ensure it loads before everything else
-    },
-    {
-      "slugbyte/lackluster.nvim",
-      lazy = false,
-      priority = 1000, -- or "lackluster" / "lackluster-hack" / "lackluster-mint"
-    },
-    {
       "ellisonleao/gruvbox.nvim",
       priority = 1000, -- Make sure it loads first
       config = true,
@@ -43,15 +34,6 @@ require("lazy").setup({
         },
       },
     },
-    -- {
-    --   "sainnhe/gruvbox-material",
-    --   lazy = false,
-    --   priority = 1000,
-    --   config = function()
-    --     vim.g.gruvbox_material_background = "soft" -- options: 'hard', 'medium', 'soft'
-    --     vim.g.gruvbox_material_enable_italic = true
-    --   end,
-    -- },
     {
       "folke/tokyonight.nvim",
       opts = {
@@ -63,21 +45,6 @@ require("lazy").setup({
           variables = { italic = false },
           -- If you want to absolutely disable italics everywhere,
           -- you can also add 'identifiers = { italic = false }'
-        },
-      },
-    },
-    {
-      "datsfilipe/vesper.nvim",
-      lazy = false,
-      priority = 1000,
-      opts = {
-        transparent = false, -- Set to true if you want a transparent background
-        italics = {
-          comments = true,
-          keywords = true,
-          functions = true,
-          strings = true,
-          variables = true,
         },
       },
     },
@@ -98,7 +65,7 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "gruvbox",
+        colorscheme = "vscode",
       },
     },
     -- Support for typescript
@@ -123,7 +90,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "habamax", "gruvbox" } },
+  install = { colorscheme = { "habamax", "gruvbox", "monokai-pro" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
