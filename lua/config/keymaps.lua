@@ -8,3 +8,7 @@ vim.keymap.set("i", "jj", "<esc>", { desc = "Escape insert mode" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
+
+if vim.fn.has("linux") == 1 then
+  vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete word backwards (Linux)" })
+end
