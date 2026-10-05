@@ -16,3 +16,13 @@ if vim.fn.has("mac") == 1 and not vim.env.SDKROOT then
     vim.env.SDKROOT = sdk
   end
 end
+
+if vim.g.neovide then
+  -- Neovide specific configuration
+  vim.o.guifont = "FiraCode Nerd Font:h14" -- Adjust font and size as needed
+  vim.g.neovide_transparency = 0.9 -- 0.0 is fully transparent, 1.0 is opaque
+  vim.g.neovide_normal_opacity = 0.85
+  vim.g.neovide_cursor_animation_length = 0.13
+
+  vim.g.neovide_window_blurred = true
+end

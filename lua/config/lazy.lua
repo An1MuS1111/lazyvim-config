@@ -37,6 +37,7 @@ require("lazy").setup({
     {
       "folke/tokyonight.nvim",
       opts = {
+        transparent = true,
         styles = {
           -- Set italic to false for whatever groups you want to disable
           comments = { italic = false },
@@ -54,8 +55,8 @@ require("lazy").setup({
       priority = 1000,
       opts = {
         transparent = false,
-        italic_comments = true,
-        italic_inlayhints = true,
+        italic_comments = false,
+        italic_inlayhints = false,
         underline_links = true,
         disable_nvimtree_bg = true,
       },
